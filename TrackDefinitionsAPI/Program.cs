@@ -4,6 +4,9 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddScoped<ITrackDefinitionService, TrackDefinitionService>();
+builder.Services.AddScoped<ITagMappingService, TagMappingService>();
+builder.Services.AddScoped<IDepartment, EDMDepartment>();
+builder.Services.AddScoped<IDepartment, DefaultDepartment>();
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
